@@ -7,10 +7,10 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-    authur = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.CharField()
-    created_date = models.DateTimeField(default=timezone.now())
+    text = models.CharField(max_length=2000)
+    created_date = models.DateTimeField(default=timezone.now) #TOCHECK I've removed the () and kept it without jut .now
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
@@ -29,10 +29,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', related_name='comments')
+    post = models.ForeignKey('blog.Post', related_name='comments',on_delete=models.CASCADE)
     author = models.CharField(max_length=200)
-    text = models.CharField()
-    created_date = models.DateTimeField(default=timezone.now())
+    text = models.CharField(max_length=2000)
+    created_date = models.DateTimeField(default=timezone.now)#TOCHECK I've removed the () and kept it without jut .now
     approved_comment = models.BooleanField(default=False)
 
     def approved(self):
