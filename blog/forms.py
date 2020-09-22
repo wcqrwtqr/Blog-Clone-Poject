@@ -1,9 +1,10 @@
 from django import forms
-from blog.models import Post, Comment
+from .models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
-    class Meta: #(check here later if there should be () or not need for it)
+    class Meta:
+        model = Post
         fields = ('author', 'title', 'text')
 
         widgets = {
@@ -14,7 +15,8 @@ class PostForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        filter('author','text')
+        model = Comment
+        fields=('author','text')
 
         widgets = {
             'author': forms.TextInput(attrs={'class':'textinputclass'}),

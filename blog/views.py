@@ -10,13 +10,14 @@ from django.urls import  reverse_lazy
 
 
 class AboutView(TemplateView):
-    template_name = 'about.html'
+    #template_name = 'about.html'
+    template_name = 'blog/about.html'
 
 class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')) # TOCHECK this is very possible to be wrong
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') # TOCHECK this is very possible to be wrong
     # for more details we can refer to the Field lookups in django  - Documentation
 
 class PostDetailView(DetailView):
