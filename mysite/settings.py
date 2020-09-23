@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates/blog') # TOCHECK - the instructor used 'blog/tempaltes/blog'
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates/blog') 
 
 
 # Quick-start development settings - unsuitable for production
@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
-#TOCHECK
+
 # the instructor used the following : LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/'
 
