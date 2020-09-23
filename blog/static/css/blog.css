@@ -12,12 +12,6 @@ margin-left:auto;
 margin-right:auto;
 }
 
-.loader {
-  position:fixed;
-  filter:hue-rotate(0deg);
-  color:linear-gradient(45deg,#0f8,#08f);
-  animation:hue 10000ms infinite linear;
-}
 
 
 .btn-comment{
@@ -43,6 +37,14 @@ text-align: center;
 }
 
 
+
+
+
+.loader{
+  filter:hue-rotate(0deg);
+  color:linear-gradient(45deg,#0f8,#08f);
+  animation:hue 10000ms infinite linear;
+}
 @keyframes spinify {
   0% {
     transform: translate(0px,0px);

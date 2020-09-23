@@ -17,7 +17,7 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') # TOCHECK this is very possible to be wrong
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') 
     # for more details we can refer to the Field lookups in django  - Documentation
 
 class PostDetailView(DetailView):
@@ -25,14 +25,14 @@ class PostDetailView(DetailView):
 
 class CreatePostView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
-    redirect_field_name = 'blog/post_detail.html' # TOCHECK
+    redirect_field_name = 'blog/post_detail.html' 
     form_class = PostForm
     model = Post
 
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     login_url = '/login/'
-    redirect_field_name = 'blog/post_detail.html' # TOCHECK
+    redirect_field_name = 'blog/post_detail.html' 
     form_class = PostForm
     model = Post
 
@@ -44,7 +44,7 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 class DraftListView(LoginRequiredMixin,ListView):
     login_url = '/login/'
-    redirect_field_name = 'blog/post_draft_list.html' # TOCHECK the link later if its working or not
+    redirect_field_name = 'blog/post_draft_list.html' 
     model = Post
 
     def get_queryset(self):
